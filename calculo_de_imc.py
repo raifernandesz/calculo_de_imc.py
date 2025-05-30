@@ -19,4 +19,5 @@ elif imc >= 35.0 and imc <= 39.9:
 else: 
      print("Obesidade Grau III mórbida")
 
+print(f"O cliente (nome), tem um IMC de (imc)")
 
