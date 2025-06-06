@@ -1,23 +1,29 @@
-nome_do_paciente = input("escreva nome do paciente")
-peso = float(input("Digite seu peso"))
-altura = float(input("Digite sua altura"))
+try:
+    nome_do_paciente = input("Escreva o nome do paciente: ")
+    peso = float(input("Digite seu peso (kg): "))
+    altura = float(input("Digite sua altura (m): "))
+    
+    # Calculando o IMC
+    imc = peso / (altura * altura)
 
+    # Exibindo a classificação do IMC
+    if imc < 18.5:
+        print("Abaixo do peso")
+    elif 18.5 <= imc <= 24.9:
+        print("Peso normal")
+    elif 25.0 <= imc <= 29.9:
+        print("Sobrepeso")
+    elif 30.0 <= imc <= 34.9:
+        print("Obesidade Grau I")
+    elif 35.0 <= imc <= 39.9:
+        print("Obesidade Grau II")
+    else:
+        print("Obesidade Grau III mórbida")
 
-imc = peso / (altura*altura)
+    # Exibindo o resultado final
+    print(f"O paciente {nome_do_paciente} tem um IMC de {imc:.1f}")
 
-
-if imc < 18.5:
-    print("abaixo do peso")
-elif imc >= 18.5 and imc <= 24.9:
-    print("peso normal")
-elif imc >=25.0 and imc <= 29.9:
-     print("sobrepeso")
-elif imc >= 30.0 and imc <=34.9:
-    print("Obesidade Grau I")
-elif imc >= 35.0 and imc <= 39.9:
-    print("Obesidade Grau II")
-else: 
-     print("Obesidade Grau III mórbida")
-
-print(f"O cliente (nome), tem um IMC de (imc)")
-
+except ValueError:
+    print("Erro: Por favor, insira valores numéricos válidos para peso e altura.")
+except KeyboardInterrupt:
+    print("\nEntrada interrompida pelo usuário. O programa será encerrado.")
