@@ -27,3 +27,8 @@ except ValueError:
     print("Erro: Por favor, insira valores numéricos válidos para peso e altura.")
 except KeyboardInterrupt:
     print("\nEntrada interrompida pelo usuário. O programa será encerrado.")
+
+
+with open ("cadastro_imc.txt",  "a") as arquivo:
+    arquivo.write(f"Nome: {nome_do_paciente} \nIMC: {imc:.2f}")
+    arquivo.write("\n-------------------------------------")
